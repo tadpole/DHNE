@@ -116,7 +116,7 @@ class hypergraph(object):
         prefix_path = os.path.join(self.options.save_path, prefix)
         if not os.path.exists(prefix_path):
             os.makedirs(prefix_path)
-        np.save(open(os.path.join(prefix_path, file_name), 'w'), emds)
+        np.save(open(os.path.join(prefix_path, file_name), 'wb'), emds)
 
     def load(self):
         prefix_path = os.path.join(self.options.save_path, '{}_{}'.format(self.options.prefix_path, self.options.embedding_size[0]))
