@@ -41,10 +41,10 @@ class DataSet(object):
             end = self.index_in_epoch
             neg_data = []
             for i in range(start, end):
-                ### warning !!! we need deepcopy to copy list
-                index = copy.deepcopy(self.edge[i])
                 n_neg = 0
                 while(n_neg < num_neg_samples):
+                    ### warning !!! we need deepcopy to copy list
+                    index = copy.deepcopy(self.edge[i])
                     mode = np.random.rand()
                     if mode < pair_radio:
                         type_ = np.random.randint(3)
